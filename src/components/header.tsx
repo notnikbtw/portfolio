@@ -2,11 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-const navItems = [
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-];
+import { navItems } from '@/config/navigation';
 
 export function Header() {
   const pathname = usePathname();
