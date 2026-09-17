@@ -8,8 +8,8 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="border-border bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-4 sm:px-6">
+    <header className="border-border bg-background sticky top-0 z-50 w-full border-b">
+      <div className="mx-auto flex h-16 w-full max-w-3xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
           className="text-foreground hover:text-foreground/80 font-mono text-lg font-bold tracking-tight transition-colors"

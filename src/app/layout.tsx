@@ -55,7 +55,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 sm:px-6">
+          <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-4 sm:px-6">
             {children}
           </main>
           <Footer />
