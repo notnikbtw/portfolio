@@ -11,7 +11,8 @@ export function Footer() {
           &copy; {currentYear}{' '}
           <Link
             href="/"
-            className="text-foreground hover:text-foreground/80 transition-colors"
+            aria-label="!Nik - Home page"
+            className="text-foreground hover:text-foreground/80 focus-visible:ring-ring transition-colors focus-visible:ring-1 focus-visible:outline-none"
           >
             !Nik
           </Link>
@@ -26,14 +27,16 @@ export function Footer() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="hover:text-foreground transition-colors"
+                className="hover:text-foreground focus-visible:ring-ring transition-colors focus-visible:ring-1 focus-visible:outline-none"
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
-          <span className="text-border/60 hidden sm:inline">•</span>
+          <span className="text-border/60 hidden sm:inline" aria-hidden="true">
+            •
+          </span>
 
           <nav className="flex items-center gap-4" aria-label="Social links">
             {socialLinks.map(link => (
@@ -42,7 +45,8 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors"
+                aria-label={link.label}
+                className="hover:text-foreground focus-visible:ring-ring transition-colors focus-visible:ring-1 focus-visible:outline-none"
               >
                 {link.label}
               </Link>

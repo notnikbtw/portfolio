@@ -1,34 +1,31 @@
 import Link from 'next/link';
 import { ArrowRight, FolderGit2 } from 'lucide-react';
 import type { Project } from '@/config/projects';
+import { TechList } from '@/components/tech-badge';
+import { Card } from '@/components/ui/card';
 
-interface ProjectCardProps {
+type ProjectCardProps = {
   project: Project;
-}
+};
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group border-border bg-card/30 hover:border-foreground/40 hover:bg-card/60 flex flex-col justify-between border p-4 transition-colors sm:flex-row sm:items-start sm:gap-6">
+    <Card className="group flex flex-col justify-between p-4 sm:flex-row sm:items-start sm:gap-6">
       <div className="flex flex-1 flex-col gap-2">
-        {/* Заголовок та статуси */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-foreground font-mono text-sm font-semibold">
+          <h3 className="text-foreground font-mono text-sm font-semibold">
             {project.title}
-          </span>
+          </h3>
 
-          {/* Індикатор наявності деплою */}
           {project.liveUrl && (
-            <span
-              title="Live deployment available"
-              className="text-chart-4 inline-flex items-center gap-1 font-mono text-[10px]"
-            >
-              <span className="bg-chart-4 h-1.5 w-1.5" />
+            <span className="text-chart-4 inline-flex items-center gap-1 font-mono text-[10px]">
+              <span className="bg-chart-4 h-1.5 w-1.5" aria-hidden="true" />
               <span>live</span>
             </span>
           )}
 
-          {/* Статус життєвого циклу */}
           <span
+            aria-label={`Status: ${project.status}`}
             className={`inline-flex items-center gap-1 font-mono text-[10px] ${
               project.status === 'active'
                 ? 'text-chart-2'
@@ -41,33 +38,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   ? 'bg-chart-2'
                   : 'bg-muted-foreground/40'
               }`}
+              aria-hidden="true"
             />
-            {project.status}
+            <span>{project.status}</span>
           </span>
         </div>
 
-        {/* Опис */}
-        <p
-          title={project.description}
-          className="text-muted-foreground line-clamp-2 max-w-xl text-xs leading-relaxed"
-        >
+        <p className="text-muted-foreground line-clamp-2 max-w-xl text-xs leading-relaxed">
           {project.description}
         </p>
 
-        {/* Теги */}
-        <div className="mt-1 flex flex-wrap gap-1.5">
-          {project.tech.map(t => (
-            <span
-              key={t}
-              className="border-border/80 bg-background/50 text-muted-foreground border px-1.5 py-0.5 font-mono text-[10px]"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+        <TechList items={project.tech} className="mt-1" />
       </div>
 
-      {/* Права колонка: Дата вгорі, під нею посилання */}
       <div className="mt-3 flex flex-col items-start gap-2.5 sm:mt-0 sm:shrink-0 sm:items-end">
         {project.period && (
           <span className="text-muted-foreground/60 font-mono text-xs">
@@ -82,9 +65,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} source code`}
-              className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 font-mono text-xs transition-colors"
+              className="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
             >
-              <FolderGit2 className="h-3.5 w-3.5" />
+              <FolderGit2 className="h-3.5 w-3.5" aria-hidden="true" />
               <span>code</span>
             </Link>
           )}
@@ -92,16 +75,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.liveUrl && project.status !== 'archived' && (
             <Link
               href={project.liveUrl}
+              aria-label={`${project.title} live demo`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-chart-1 inline-flex items-center gap-1 font-mono text-xs transition-colors"
+              className="text-foreground hover:text-chart-1 focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
             >
               <span>demo</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
             </Link>
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -48,6 +48,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="bg-background text-foreground flex min-h-full flex-col">
+        <a
+          href="#main-content"
+          className="focus:bg-background focus:text-foreground focus:border-border focus:ring-ring sr-only font-mono text-xs focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:border focus:px-3 focus:py-1.5 focus:ring-1 focus:outline-none"
+        >
+          Skip to content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -55,7 +61,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-4 sm:px-6">
+          <main
+            id="main-content"
+            className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-4 sm:px-6"
+          >
             {children}
           </main>
           <Footer />
