@@ -1,7 +1,7 @@
 import { Folder, User } from 'lucide-react';
 import { Icons } from '@/components/icons';
 
-export type NavItem = {
+type NavItem = {
   label: string;
   href: string;
   icon?: React.ComponentType<{ className?: string }>;
