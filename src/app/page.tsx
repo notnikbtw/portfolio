@@ -1,8 +1,11 @@
+import { Hero } from '@/components/hero';
+import { FeaturedProjects } from '@/components/featured-projects';
+
 export default function Home() {
   return (
-    <div className="py-16">
-      <h1 className="text-3xl font-bold tracking-tight">Work in progress</h1>
-      <p className="text-muted-foreground mt-2">Personal portfolio and blog.</p>
+    <div className="flex flex-col gap-10 pt-4 pb-16 sm:gap-14 sm:pt-6 sm:pb-20">
+      <Hero />
+      <FeaturedProjects />
     </div>
   );
 }
