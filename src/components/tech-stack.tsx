@@ -7,7 +7,7 @@ export function TechStack() {
   return (
     <section
       aria-label="Technologies and environment"
-      className="flex flex-col gap-4 py-6"
+      className="flex flex-col gap-4"
     >
       <SectionHeader title="Tech & Environment" />
 
