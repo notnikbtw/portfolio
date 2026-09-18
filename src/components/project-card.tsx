@@ -13,12 +13,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <Card className="group flex flex-col justify-between p-4 sm:flex-row sm:items-start sm:gap-6">
       <div className="flex flex-1 flex-col gap-2">
         <div className="flex flex-wrap items-center gap-2">
-          <h3 className="text-foreground font-mono text-sm font-semibold">
+          <h3 className="text-foreground font-mono text-sm font-semibold sm:text-base">
             {project.title}
           </h3>
 
           {project.liveUrl && (
-            <span className="text-chart-4 inline-flex items-center gap-1 font-mono text-[10px]">
+            <span className="text-chart-4 inline-flex items-center gap-1 font-mono text-xs">
               <span className="bg-chart-4 h-1.5 w-1.5" aria-hidden="true" />
               <span>live</span>
             </span>
@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
           <span
             aria-label={`Status: ${project.status}`}
-            className={`inline-flex items-center gap-1 font-mono text-[10px] ${
+            className={`inline-flex items-center gap-1 font-mono text-xs ${
               project.status === 'active'
                 ? 'text-chart-2'
                 : 'text-muted-foreground/60'
@@ -44,7 +44,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         </div>
 
-        <p className="text-muted-foreground line-clamp-2 max-w-xl text-xs leading-relaxed">
+        <p className="text-muted-foreground line-clamp-2 max-w-xl text-sm leading-relaxed">
           {project.description}
         </p>
 

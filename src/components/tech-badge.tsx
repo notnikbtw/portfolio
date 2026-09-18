@@ -10,7 +10,7 @@ export function TechBadge({ children, className, ...props }: TechBadgeProps) {
   return (
     <span
       className={cn(
-        'border-border/70 bg-background/60 text-foreground border px-1.5 py-0.5 font-mono text-[11px] transition-colors',
+        'border-border/70 bg-background/60 text-foreground border px-1.5 py-0.5 font-mono text-xs transition-colors',
         className
       )}
       {...props}

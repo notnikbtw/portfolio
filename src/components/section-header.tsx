@@ -22,7 +22,7 @@ export function SectionHeader({
         className
       )}
     >
-      <div className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-wider uppercase">
+      <div className="text-muted-foreground flex items-center gap-2 font-mono text-xs font-semibold tracking-wider uppercase sm:text-sm">
         <span className="text-chart-2" aria-hidden="true">
           ❯
         </span>
@@ -33,7 +33,7 @@ export function SectionHeader({
         <Link
           href={href}
           aria-label={`${linkText} for ${title}`}
-          className="group text-muted-foreground hover:text-foreground inline-flex items-center gap-1 font-mono text-xs transition-colors"
+          className="group text-muted-foreground hover:text-foreground inline-flex items-center gap-1 font-mono text-xs transition-colors sm:text-sm"
         >
           <span>{linkText}</span>
           <ArrowRight

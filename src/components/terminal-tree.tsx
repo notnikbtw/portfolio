@@ -14,7 +14,7 @@ export function TerminalTree() {
     <section aria-label="Directory tree" className="flex flex-col gap-3">
       <SectionHeader title="Directory Tree" />
 
-      <Card className="p-4 font-mono text-xs select-text">
+      <Card className="p-4 font-mono text-sm select-text">
         <div className="text-muted-foreground mb-3 flex items-center gap-2">
           <span className="text-chart-2 select-none" aria-hidden="true">
             nik@nixos:~/home$
@@ -70,7 +70,7 @@ export function TerminalTree() {
                       )}
 
                       {item.comment && (
-                        <span className="text-muted-foreground/50 ml-2 text-[11px]">
+                        <span className="text-muted-foreground/50 ml-2 text-xs">
                           # {item.comment}
                         </span>
                       )}
@@ -81,7 +81,7 @@ export function TerminalTree() {
             );
           })}
         </div>
-        <div className="text-muted-foreground/50 mt-2 text-[11px]">
+        <div className="text-muted-foreground/50 mt-2 text-xs">
           {totalDirectories} directories, {totalItems} items
         </div>
 
@@ -90,7 +90,7 @@ export function TerminalTree() {
             nik@nixos:~/home$
           </span>
           <span
-            className="bg-chart-2 inline-block h-3.5 w-1.5 animate-pulse"
+            className="bg-chart-2 inline-block h-4 w-2 animate-pulse"
             aria-hidden="true"
           />
         </div>
