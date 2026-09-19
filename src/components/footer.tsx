@@ -10,6 +10,7 @@ export function Footer() {
   return (
     <footer className="border-border bg-background w-full border-t">
       <div className="text-muted-foreground mx-auto flex w-full max-w-3xl flex-col items-center gap-6 px-4 py-8 text-xs sm:px-6 sm:text-sm">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={MOE_COUNTER_URL}
           alt="Visitor Counter"
