@@ -42,7 +42,7 @@ export const treeData: TreeGroup[] = [
         name: 'kanagawa.nvim',
         url: 'https://github.com/rebelot/kanagawa.nvim',
       },
-      { name: 'moe-counter', url: 'https://count.camora.dev/' },
+      { name: 'moe-counter', url: 'https://count.getloli.com/' },
     ],
   },
 ];

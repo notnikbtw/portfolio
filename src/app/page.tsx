@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-12 pt-8 pb-16 sm:gap-14 sm:pt-12 sm:pb-24">
       <Hero />
-      <TerminalTree />
-      <TechStack />
       <FeaturedProjects />
+      <TechStack />
+      <TerminalTree />
     </div>
   );
 }
