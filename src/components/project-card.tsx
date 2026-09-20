@@ -58,19 +58,33 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         )}
 
-        <div className="flex items-center gap-3">
-          {project.repositoryUrl && (
-            <Link
-              href={project.repositoryUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${project.title} source code`}
-              className="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
-            >
-              <FolderGit2 className="h-3.5 w-3.5" aria-hidden="true" />
-              <span>code</span>
-            </Link>
-          )}
+        <div className="flex flex-wrap items-center gap-3">
+          {project.repositories && project.repositories.length > 0
+            ? project.repositories.map(repo => (
+                <Link
+                  key={repo.url}
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} ${repo.label} source code`}
+                  className="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
+                >
+                  <FolderGit2 className="h-3.5 w-3.5" aria-hidden="true" />
+                  <span>{repo.label}</span>
+                </Link>
+              ))
+            : project.repositoryUrl && (
+                <Link
+                  href={project.repositoryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} source code`}
+                  className="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
+                >
+                  <FolderGit2 className="h-3.5 w-3.5" aria-hidden="true" />
+                  <span>code</span>
+                </Link>
+              )}
 
           {project.liveUrl && project.status !== 'archived' && (
             <Link

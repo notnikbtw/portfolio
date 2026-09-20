@@ -1,5 +1,10 @@
 export type ProjectStatus = 'active' | 'completed' | 'archived';
 
+export type ProjectRepository = {
+  label: string;
+  url: string;
+};
+
 export type Project = {
   title: string;
   description: string;
@@ -7,40 +12,56 @@ export type Project = {
   period: string;
   status: ProjectStatus;
   repositoryUrl?: string;
+  repositories?: ProjectRepository[];
   liveUrl?: string;
   featured?: boolean;
 };
 
 export const projects: Project[] = [
   {
-    title: 'Booking Platform',
+    title: 'Portfolio Website',
     description:
-      'High-performance full-stack venue booking engine featuring JWT authentication and modular API services.',
-    tech: ['NestJS', 'PostgreSQL', 'React', 'Docker'],
-    period: '2026',
+      'A minimalist personal portfolio with a terminal-inspired interface, built using Next.js and the Kanagawa color palette.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    period: '2026 - present',
     status: 'active',
-    repositoryUrl: 'https://github.com/notnikbtw',
-    liveUrl: '#',
+    repositoryUrl: 'https://github.com/notnikbtw/portfolio',
     featured: true,
   },
   {
     title: 'Dotfiles & NixOS Config',
     description:
-      'Declarative system configurations, Hyprland desktop environment workflow, and lightweight developer tooling.',
-    tech: ['Nix', 'Hyprland', 'Waybar', 'Lua'],
-    period: '2025 — present',
+      'My personal Nix configurations for my PC and laptop, which use the Hyprland WM. Also included are my configurations for Quickshell, Rofi, Zsh, and other programs.',
+    tech: ['Nix', 'Hyprland', 'Quickshell', 'Rofi', 'Zsh', 'Tmux'],
+    period: '2026 - present',
     status: 'active',
-    repositoryUrl: 'https://github.com/notnikbtw',
+    repositoryUrl: 'https://github.com/notnikbtw/nixos-config',
     featured: true,
   },
   {
-    title: 'Homelab Infrastructure',
+    title: 'Booking Platform',
     description:
-      'Automated containerized homelab with Vaultwarden, reverse proxy routing, and local network services.',
-    tech: ['Docker', 'Nginx', 'Linux', 'Proxmox'],
-    period: '2024 — 2025',
-    status: 'archived',
-    repositoryUrl: 'https://github.com/notnikbtw',
+      'Full-stack platform for booking tables and seats at restaurants. It includes an interactive search, a booking feature, reviews, and integration with Google Maps.',
+    tech: [
+      'React',
+      'NestJS',
+      'PostgreSQL',
+      'TypeORM',
+      'Docker',
+      'Google Maps API',
+    ],
+    period: '2025 - 2026',
+    status: 'completed',
+    repositories: [
+      {
+        label: 'backend',
+        url: 'https://github.com/notnikbtw/venue-booking-backend',
+      },
+      {
+        label: 'frontend',
+        url: 'https://github.com/notnikbtw/venue-booking-frontend',
+      },
+    ],
     featured: true,
   },
 ];
