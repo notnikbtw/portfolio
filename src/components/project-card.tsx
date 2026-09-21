@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { ArrowRight, FolderGit2 } from 'lucide-react';
 import type { Project } from '@/config/projects';
 import { TechList } from '@/components/tech-badge';
@@ -29,14 +29,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className={`inline-flex items-center gap-1 font-mono text-xs ${
               project.status === 'active'
                 ? 'text-chart-2'
-                : 'text-muted-foreground/60'
+                : project.status === 'completed'
+                  ? 'text-chart-1'
+                  : 'text-muted-foreground/60'
             }`}
           >
             <span
               className={`h-1.5 w-1.5 ${
                 project.status === 'active'
                   ? 'bg-chart-2'
-                  : 'bg-muted-foreground/40'
+                  : project.status === 'completed'
+                    ? 'bg-chart-1'
+                    : 'bg-muted-foreground/40'
               }`}
               aria-hidden="true"
             />
@@ -64,10 +68,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <Link
                   key={repo.url}
                   href={repo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label={`${project.title} ${repo.label} source code`}
-                  className="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
+                  className="inline-flex items-center gap-1 font-mono text-xs"
                 >
                   <FolderGit2 className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>{repo.label}</span>
@@ -76,10 +78,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             : project.repositoryUrl && (
                 <Link
                   href={project.repositoryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label={`${project.title} source code`}
-                  className="text-muted-foreground hover:text-foreground focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
+                  className="inline-flex items-center gap-1 font-mono text-xs"
                 >
                   <FolderGit2 className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>code</span>
@@ -90,9 +90,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Link
               href={project.liveUrl}
               aria-label={`${project.title} live demo`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-chart-1 focus-visible:ring-ring inline-flex items-center gap-1 font-mono text-xs transition-colors focus-visible:ring-1 focus-visible:outline-none"
+              className="inline-flex items-center gap-1 font-mono text-xs"
             >
               <span>demo</span>
               <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
