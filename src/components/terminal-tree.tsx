@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { Card } from '@/components/ui/card';
 import { SectionHeader } from '@/components/section-header';
 import { treeData } from '@/config/tree';
@@ -57,12 +57,7 @@ export function TerminalTree() {
                         {itemBranch}
                       </span>
                       {item.url ? (
-                        <Link
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground hover:text-chart-2 focus-visible:ring-ring underline-offset-4 hover:underline focus-visible:ring-1 focus-visible:outline-none"
-                        >
+                        <Link href={item.url} variant="green">
                           {item.name}
                         </Link>
                       ) : (

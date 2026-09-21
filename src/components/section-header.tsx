@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -33,7 +33,7 @@ export function SectionHeader({
         <Link
           href={href}
           aria-label={`${linkText} for ${title}`}
-          className="group text-muted-foreground hover:text-foreground inline-flex items-center gap-1 font-mono text-xs transition-colors sm:text-sm"
+          className="group inline-flex items-center gap-1 font-mono text-xs sm:text-sm"
         >
           <span>{linkText}</span>
           <ArrowRight

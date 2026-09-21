@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/components/ui/link';
 import { navItems, socialLinks } from '@/config/navigation';
 import { webBadges } from '@/config/badges';
 import { MOE_COUNTER_URL } from '@/config/site';
@@ -38,9 +38,7 @@ export function Footer() {
                 <Link
                   key={badge.name}
                   href={badge.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="focus-visible:ring-ring inline-block transition-opacity hover:opacity-85 focus-visible:ring-1 focus-visible:outline-none"
+                  className="inline-block transition-opacity hover:opacity-85"
                 >
                   {badgeImage}
                 </Link>
@@ -58,7 +56,7 @@ export function Footer() {
             <Link
               href="/"
               aria-label="!Nik - Home page"
-              className="text-foreground hover:text-foreground/80 focus-visible:ring-ring transition-colors focus-visible:ring-1 focus-visible:outline-none"
+              className="text-foreground hover:text-foreground/80"
             >
               !Nik
             </Link>
@@ -70,11 +68,7 @@ export function Footer() {
               aria-label="Footer navigation"
             >
               {navItems.map(item => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="hover:text-foreground focus-visible:ring-ring transition-colors focus-visible:ring-1 focus-visible:outline-none"
-                >
+                <Link key={item.href} href={item.href}>
                   {item.label}
                 </Link>
               ))}
@@ -89,14 +83,7 @@ export function Footer() {
 
             <nav className="flex items-center gap-4" aria-label="Social links">
               {socialLinks.map(link => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="hover:text-foreground focus-visible:ring-ring transition-colors focus-visible:ring-1 focus-visible:outline-none"
-                >
+                <Link key={link.label} href={link.href} aria-label={link.label}>
                   {link.label}
                 </Link>
               ))}
