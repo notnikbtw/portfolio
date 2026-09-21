@@ -7,6 +7,7 @@ type SectionHeaderProps = {
   href?: string;
   linkText?: string;
   className?: string;
+  children?: React.ReactNode;
 };
 
 export function SectionHeader({
@@ -14,6 +15,7 @@ export function SectionHeader({
   href,
   linkText,
   className,
+  children,
 }: SectionHeaderProps) {
   return (
     <div
@@ -29,6 +31,7 @@ export function SectionHeader({
         <h2>{title}</h2>
       </div>
 
+      {children}
       {href && linkText && (
         <Link
           href={href}

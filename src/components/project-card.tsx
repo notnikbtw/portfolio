@@ -29,14 +29,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className={`inline-flex items-center gap-1 font-mono text-xs ${
               project.status === 'active'
                 ? 'text-chart-2'
-                : 'text-muted-foreground/60'
+                : project.status === 'completed'
+                  ? 'text-chart-1'
+                  : 'text-muted-foreground/60'
             }`}
           >
             <span
               className={`h-1.5 w-1.5 ${
                 project.status === 'active'
                   ? 'bg-chart-2'
-                  : 'bg-muted-foreground/40'
+                  : project.status === 'completed'
+                    ? 'bg-chart-1'
+                    : 'bg-muted-foreground/40'
               }`}
               aria-hidden="true"
             />
