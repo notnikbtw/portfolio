@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { ProjectsHeader } from '@/components/projects-header';
-import { ProjectsList } from '@/components/projects-list';
+import { ProjectsHeader } from '@/components/projects/projects-header';
+import { ProjectsList } from '@/components/projects/projects-list';
 
 export const metadata: Metadata = {
   title: 'Projects | !Nik',

@@ -1,5 +1,5 @@
 import { Hero } from '@/components/hero';
-import { FeaturedProjects } from '@/components/featured-projects';
+import { FeaturedProjects } from '@/components/projects/featured-projects';
 import { TechStack } from '@/components/tech-stack';
 import { TerminalTree } from '@/components/terminal-tree';
 

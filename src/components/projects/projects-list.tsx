@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { ProjectCard } from '@/components/project-card';
+import { ProjectCard } from '@/components/projects/project-card';
 import { Badge } from '@/components/ui/badge';
 import { projects as allProjects, type Project } from '@/config/projects';
 import { PROJECTS_PER_PAGE } from '@/config/site';

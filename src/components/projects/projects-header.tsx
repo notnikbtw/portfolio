@@ -1,4 +1,4 @@
-import { Link } from '@/components/ui/link';
+import { Breadcrumb } from '@/components/breadcrumb';
 import { projects } from '@/config/projects';
 import { Badge } from '@/components/ui/badge';
 
@@ -10,20 +10,7 @@ export function ProjectsHeader() {
 
   return (
     <header className="border-border/60 flex flex-col gap-5 border-b pb-8">
-      <div>
-        <Link
-          href="/"
-          className="group inline-flex items-center gap-1.5 font-mono text-xs"
-          aria-label="Back to home directory"
-        >
-          <span className="text-chart-2 select-none" aria-hidden="true">
-            ←
-          </span>
-          <span className="underline-offset-4 group-hover:underline">
-            cd ..
-          </span>
-        </Link>
-      </div>
+      <Breadcrumb />
 
       <div className="flex flex-col gap-2.5">
         <div className="flex flex-wrap items-baseline gap-2 font-mono text-xs sm:text-lg">
