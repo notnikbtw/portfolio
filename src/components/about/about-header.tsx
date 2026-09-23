@@ -1,13 +1,7 @@
 import { Breadcrumb } from '@/components/breadcrumb';
-import { projects } from '@/config/projects';
 import { Badge } from '@/components/ui/badge';
 
-export function ProjectsHeader() {
-  const totalCount = projects.length;
-  const activeCount = projects.filter(p => p.status === 'active').length;
-  const completedCount = projects.filter(p => p.status === 'completed').length;
-  const archivedCount = projects.filter(p => p.status === 'archived').length;
-
+export function AboutHeader() {
   return (
     <header className="border-border/60 flex flex-col gap-5 border-b pb-8">
       <Breadcrumb />
@@ -20,35 +14,39 @@ export function ProjectsHeader() {
           >
             nik@nixos:
           </span>
-          <h1 className="text-foreground font-bold tracking-tight">
-            ~/projects
-          </h1>
+          <h1 className="text-foreground font-bold tracking-tight">~/about</h1>
         </div>
 
         <p className="text-muted-foreground max-w-xl text-sm leading-relaxed sm:text-base">
-          A catalog of projects, open-source tools, and system configurations.
+          Software engineer focused on clean architecture, full-stack systems,
+          and reproducible Linux environments.
         </p>
       </div>
 
       <div className="text-muted-foreground/80 flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
         <Badge>
-          total:
-          <strong className="text-foreground font-medium">{totalCount}</strong>
-        </Badge>
-        <Badge>
-          active:
-          <strong className="text-foreground font-medium">{activeCount}</strong>
-        </Badge>
-        <Badge>
-          completed:
+          role:
           <strong className="text-foreground font-medium">
-            {completedCount}
+            full-stack engineer
           </strong>
         </Badge>
         <Badge>
-          archived:
+          <span
+            className="bg-chart-2 mr-1.5 inline-block h-1.5 w-1.5"
+            aria-hidden="true"
+          />
+          status:
           <strong className="text-foreground font-medium">
-            {archivedCount}
+            open for work & projects
+          </strong>
+        </Badge>
+        <Badge>
+          os: <strong className="text-foreground font-medium">nixos</strong>
+        </Badge>
+        <Badge>
+          editor:
+          <strong className="text-foreground font-medium">
+            vscode / neovim
           </strong>
         </Badge>
       </div>
