@@ -1,6 +1,7 @@
 import { Link } from '@/components/ui/link';
 import { Card } from '@/components/ui/card';
 import { SectionHeader } from '@/components/section-header';
+import { TerminalPrompt } from '@/components/terminal-prompt';
 import { treeData } from '@/config/tree';
 
 export function TerminalTree() {
@@ -15,12 +16,11 @@ export function TerminalTree() {
       <SectionHeader title="Directory Tree" />
 
       <Card className="p-4 font-mono text-sm select-text">
-        <div className="text-muted-foreground mb-3 flex items-center gap-2">
-          <span className="text-chart-2 select-none" aria-hidden="true">
-            nik@nixos:~/home$
-          </span>
-          <span className="text-foreground">tree -l links</span>
-        </div>
+        <TerminalPrompt
+          path="~/home"
+          command="tree -l links"
+          className="mb-3"
+        />
 
         <div className="text-muted-foreground/80 flex flex-col">
           <div className="text-foreground">~/links</div>
@@ -80,15 +80,7 @@ export function TerminalTree() {
           {totalDirectories} directories, {totalItems} items
         </div>
 
-        <div className="text-muted-foreground mt-3 flex items-center gap-2">
-          <span className="text-chart-2 select-none" aria-hidden="true">
-            nik@nixos:~/home$
-          </span>
-          <span
-            className="bg-chart-2 inline-block h-4 w-2 animate-pulse"
-            aria-hidden="true"
-          />
-        </div>
+        <TerminalPrompt path="~/home" cursor className="mt-3" />
       </Card>
     </section>
   );
