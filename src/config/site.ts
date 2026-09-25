@@ -25,3 +25,14 @@ export const LINKS = {
     href: 'https://github.com/notnikbtw/nixos-config',
   },
 } as const;
+
+export const SITE_BADGE = {
+  title: '88x31 Button',
+  alt: '!Nik - 88x31 Button',
+  src: '/buttons/notnik.png',
+  url: 'https://notnik.dev',
+  description:
+    "Have a personal website or a badge collection? Feel free to add my 88x31 button to your shelf, I'd really appreciate it :3",
+  embedHtml:
+    '<a href="https://notnik.dev" target="_blank" rel="noopener noreferrer"><img src="https://notnik.dev/buttons/notnik.png" alt="!Nik - 88x31 Button" width="88" height="31" /></a>',
+};

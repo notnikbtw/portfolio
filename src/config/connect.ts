@@ -10,26 +10,51 @@ export type ConnectChannel = {
   canCopy?: boolean;
 };
 
-export const CONNECT_CHANNELS: ConnectChannel[] = [
+export type ConnectSection = {
+  id: string;
+  title: string;
+  channels: ConnectChannel[];
+};
+
+export const CONNECT_SECTIONS: ConnectSection[] = [
   {
-    label: 'email',
-    value: LINKS.email.value,
-    href: LINKS.email.href,
-    icon: Mail,
-    canCopy: true,
+    id: 'contact',
+    title: 'Direct Contact',
+    channels: [
+      {
+        label: 'email',
+        value: LINKS.email.value,
+        href: LINKS.email.href,
+        icon: Mail,
+        canCopy: true,
+      },
+    ],
   },
   {
-    label: 'github',
-    value: LINKS.github.handle,
-    href: LINKS.github.href,
-    icon: Icons.gitHub,
-  },
-  {
-    label: 'bluesky',
-    value: LINKS.bluesky.handle,
-    href: LINKS.bluesky.href,
-    icon: Icons.bluesky,
+    id: 'socials',
+    title: 'Socials & Networks',
+    channels: [
+      {
+        label: 'github',
+        value: LINKS.github.handle,
+        href: LINKS.github.href,
+        icon: Icons.gitHub,
+      },
+      {
+        label: 'bluesky',
+        value: LINKS.bluesky.handle,
+        href: LINKS.bluesky.href,
+        icon: Icons.bluesky,
+      },
+      {
+        label: 'x',
+        value: LINKS.x.handle,
+        href: LINKS.x.href,
+        icon: Icons.x,
+      },
+    ],
   },
 ];
 
+export const CONNECT_CHANNELS = CONNECT_SECTIONS.flatMap(s => s.channels);
 export const connectChannels = CONNECT_CHANNELS;
