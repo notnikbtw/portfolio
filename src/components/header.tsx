@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { navItems } from '@/config/navigation';
+import { ModeToggle } from '@/components/theme-toggle';
 
 export function Header() {
   const pathname = usePathname();
@@ -41,6 +42,7 @@ export function Header() {
               </Link>
             );
           })}
+          <ModeToggle />
         </nav>
       </div>
     </header>
