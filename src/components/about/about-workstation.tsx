@@ -7,6 +7,7 @@ import {
   KANAGAWA_PALETTE,
   NIXOS_ASCII,
 } from '@/config/workstation';
+import { LINKS } from '@/config/site';
 
 export function AboutWorkstation() {
   return (
@@ -57,11 +58,11 @@ export function AboutWorkstation() {
                   dotfiles:
                 </span>
                 <Link
-                  href="https://github.com/notnikbtw/nixos-config"
+                  href={LINKS.dotfiles.href}
                   variant="green"
                   className="group inline-flex items-center gap-1 font-medium"
                 >
-                  <span>notnikbtw/nixos-config</span>
+                  <span>{LINKS.dotfiles.repo}</span>
                 </Link>
               </div>
             </div>

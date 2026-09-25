@@ -1,5 +1,6 @@
 import { Mail } from 'lucide-react';
 import { Icons } from '@/components/icons';
+import { LINKS } from '@/config/site';
 
 export type ConnectChannel = {
   label: string;
@@ -12,21 +13,21 @@ export type ConnectChannel = {
 export const CONNECT_CHANNELS: ConnectChannel[] = [
   {
     label: 'email',
-    value: 'nik@notnik.dev',
-    href: 'mailto:nik@notnik.dev',
+    value: LINKS.email.value,
+    href: LINKS.email.href,
     icon: Mail,
     canCopy: true,
   },
   {
     label: 'github',
-    value: 'notnikbtw',
-    href: 'https://github.com/notnikbtw',
+    value: LINKS.github.handle,
+    href: LINKS.github.href,
     icon: Icons.gitHub,
   },
   {
     label: 'bluesky',
-    value: 'notnik.dev',
-    href: 'https://bsky.app/profile/notnik.dev',
+    value: LINKS.bluesky.handle,
+    href: LINKS.bluesky.href,
     icon: Icons.bluesky,
   },
 ];

@@ -1,3 +1,5 @@
+import { LINKS } from '@/config/site';
+
 export type TreeItem = {
   name: string;
   url?: string;
@@ -12,16 +14,16 @@ export type TreeGroup = {
 export const treeData: TreeGroup[] = [
   {
     directory: 'contacts',
-    items: [{ name: 'email', url: 'mailto:notnikbtw@proton.me' }],
+    items: [{ name: 'email', url: LINKS.email.href }],
   },
   {
     directory: 'socials',
     items: [
-      { name: 'github', url: 'https://github.com/notnikbtw' },
-      { name: 'x', url: 'https://x.com/notnikbtw' },
+      { name: 'github', url: LINKS.github.href },
+      { name: 'x', url: LINKS.x.href },
       {
         name: 'bluesky',
-        url: 'https://bsky.app/profile/notnikbtw.bsky.social',
+        url: LINKS.bluesky.href,
       },
     ],
   },
@@ -30,7 +32,7 @@ export const treeData: TreeGroup[] = [
     items: [
       {
         name: 'dotfiles',
-        url: 'https://github.com/notnikbtw/dotfiles',
+        url: LINKS.dotfiles.href,
         comment: 'nixos/hyprland',
       },
     ],

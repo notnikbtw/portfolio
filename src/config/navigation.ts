@@ -1,5 +1,6 @@
 import { Folder, User } from 'lucide-react';
 import { Icons } from '@/components/icons';
+import { LINKS } from '@/config/site';
 
 type NavItem = {
   label: string;
@@ -22,17 +23,17 @@ export const navItems: NavItem[] = [
 
 export const socialLinks: NavItem[] = [
   {
-    href: 'https://github.com/notnikbtw',
+    href: LINKS.github.href,
     label: 'GitHub',
     icon: Icons.gitHub,
   },
   {
-    href: 'https://x.com/notnikbtw',
+    href: LINKS.x.href,
     label: 'X',
     icon: Icons.x,
   },
   {
-    href: 'https://bsky.app/profile/notnikbtw.bsky.social',
+    href: LINKS.bluesky.href,
     label: 'Bluesky',
     icon: Icons.bluesky,
   },
