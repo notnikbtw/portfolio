@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { SectionHeader } from '@/components/section-header';
 import { Link } from '@/components/ui/link';
@@ -6,7 +6,7 @@ import { CopyButton } from '@/components/copy-button';
 import { ArrowRight } from 'lucide-react';
 import { SectionSubheader } from '@/components/section-subheader';
 import { CONNECT_SECTIONS } from '@/config/connect';
-// import { SITE_BADGE } from '@/config/site';
+import { SITE_BADGE } from '@/config/site';
 
 export function AboutConnect() {
   return (
@@ -71,7 +71,7 @@ export function AboutConnect() {
           </div>
         ))}
 
-        {/* <div className="flex flex-col gap-2.5">
+        <div className="flex flex-col gap-2.5">
           <SectionSubheader title={SITE_BADGE.title} />
 
           <Card className="flex flex-col gap-4 p-4 sm:p-5">
@@ -110,7 +110,7 @@ export function AboutConnect() {
               <code className="whitespace-pre">{SITE_BADGE.embedHtml}</code>
             </div>
           </Card>
-        </div> */}
+        </div>
       </div>
     </section>
   );
