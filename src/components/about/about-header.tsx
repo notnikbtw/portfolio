@@ -1,5 +1,6 @@
 import { Breadcrumb } from '@/components/breadcrumb';
 import { Badge } from '@/components/ui/badge';
+import { TerminalTitle } from '@/components/terminal-title';
 
 export function AboutHeader() {
   return (
@@ -7,15 +8,7 @@ export function AboutHeader() {
       <Breadcrumb />
 
       <div className="flex flex-col gap-2.5">
-        <div className="flex flex-wrap items-baseline gap-2 font-mono text-xs sm:text-lg">
-          <span
-            className="text-chart-2 font-semibold select-none"
-            aria-hidden="true"
-          >
-            nik@nixos:
-          </span>
-          <h1 className="text-foreground font-bold tracking-tight">~/about</h1>
-        </div>
+        <TerminalTitle path="~/about" />
 
         <p className="text-muted-foreground max-w-xl text-sm leading-relaxed sm:text-base">
           Software engineer focused on clean architecture, full-stack systems,
