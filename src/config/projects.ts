@@ -27,8 +27,8 @@ export const projects: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     period: '2026 - present',
     status: 'active',
-    repositoryUrl: 'https://github.com/notnikbtw/portfolio',
-    liveUrl: 'https://portfolio-notnikbtw.vercel.app/',
+    repositoryUrl: LINKS.portfolio.repositoryUrl,
+    liveUrl: LINKS.portfolio.liveUrl,
     featured: true,
   },
   {

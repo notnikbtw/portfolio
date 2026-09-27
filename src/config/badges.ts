@@ -1,3 +1,5 @@
+import { SITE_BADGE } from '@/config/site';
+
 type WebBadge = {
   name: string;
   src: string;
@@ -17,6 +19,11 @@ export const webBadges: WebBadge[] = [
   {
     name: 'Anime 2',
     src: '/buttons/anime.gif',
+  },
+  {
+    name: 'Portfolio',
+    src: SITE_BADGE.src,
+    url: SITE_BADGE.url,
   },
   {
     name: 'I like computer',
