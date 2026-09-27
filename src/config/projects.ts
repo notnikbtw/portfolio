@@ -28,6 +28,7 @@ export const projects: Project[] = [
     period: '2026 - present',
     status: 'active',
     repositoryUrl: 'https://github.com/notnikbtw/portfolio',
+    liveUrl: 'https://portfolio-notnikbtw.vercel.app/',
     featured: true,
   },
   {
