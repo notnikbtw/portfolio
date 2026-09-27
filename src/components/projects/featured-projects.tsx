@@ -1,5 +1,5 @@
 import { featuredProjects } from '@/config/projects';
-import { ProjectCard } from '@/components/project-card';
+import { ProjectCard } from '@/components/projects/project-card';
 import { SectionHeader } from '@/components/section-header';
 
 export function FeaturedProjects() {

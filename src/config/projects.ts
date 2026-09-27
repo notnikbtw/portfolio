@@ -1,3 +1,5 @@
+import { LINKS } from '@/config/site';
+
 export type ProjectStatus = 'active' | 'completed' | 'archived';
 
 export type ProjectRepository = {
@@ -26,6 +28,7 @@ export const projects: Project[] = [
     period: '2026 - present',
     status: 'active',
     repositoryUrl: 'https://github.com/notnikbtw/portfolio',
+    liveUrl: 'https://portfolio-notnikbtw.vercel.app/',
     featured: true,
   },
   {
@@ -35,7 +38,7 @@ export const projects: Project[] = [
     tech: ['Nix', 'Hyprland', 'Quickshell', 'Rofi', 'Zsh', 'Tmux'],
     period: '2026 - present',
     status: 'active',
-    repositoryUrl: 'https://github.com/notnikbtw/nixos-config',
+    repositoryUrl: LINKS.dotfiles.href,
     featured: true,
   },
   {
