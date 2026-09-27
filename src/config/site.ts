@@ -3,6 +3,8 @@ export const MOE_COUNTER_URL =
 
 export const PROJECTS_PER_PAGE = 6;
 
+export const SITE_URL = 'https://portfolio-notnikbtw.vercel.app';
+
 export const LINKS = {
   email: {
     value: 'notnikbtw@proton.me',
@@ -24,15 +26,19 @@ export const LINKS = {
     repo: 'notnikbtw/nixos-config',
     href: 'https://github.com/notnikbtw/nixos-config',
   },
+  portfolio: {
+    repo: 'notnikbtw/portfolio',
+    repositoryUrl: 'https://github.com/notnikbtw/portfolio',
+    liveUrl: SITE_URL,
+  },
 } as const;
 
 export const SITE_BADGE = {
   title: '88x31 Button',
   alt: '!Nik - 88x31 Button',
   src: '/buttons/notnik.png',
-  url: 'https://notnik.dev',
+  url: SITE_URL,
   description:
     "Have a personal website or a badge collection? Feel free to add my 88x31 button to your shelf, I'd really appreciate it :3",
-  embedHtml:
-    '<a href="https://notnik.dev" target="_blank" rel="noopener noreferrer"><img src="https://notnik.dev/buttons/notnik.png" alt="!Nik - 88x31 Button" width="88" height="31" /></a>',
+  embedHtml: `<a href="${SITE_URL}" target="_blank" rel="noopener noreferrer"><img src="${SITE_URL}/buttons/notnik.png" alt="!Nik - 88x31 Button" width="88" height="31" /></a>`,
 };

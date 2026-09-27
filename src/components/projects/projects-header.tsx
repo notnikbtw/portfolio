@@ -1,6 +1,7 @@
 import { Breadcrumb } from '@/components/breadcrumb';
 import { projects } from '@/config/projects';
 import { Badge } from '@/components/ui/badge';
+import { TerminalTitle } from '@/components/terminal-title';
 
 export function ProjectsHeader() {
   const totalCount = projects.length;
@@ -13,17 +14,7 @@ export function ProjectsHeader() {
       <Breadcrumb />
 
       <div className="flex flex-col gap-2.5">
-        <div className="flex flex-wrap items-baseline gap-2 font-mono text-xs sm:text-lg">
-          <span
-            className="text-chart-2 font-semibold select-none"
-            aria-hidden="true"
-          >
-            nik@nixos:
-          </span>
-          <h1 className="text-foreground font-bold tracking-tight">
-            ~/projects
-          </h1>
-        </div>
+        <TerminalTitle path="~/projects" />
 
         <p className="text-muted-foreground max-w-xl text-sm leading-relaxed sm:text-base">
           A catalog of projects, open-source tools, and system configurations.

@@ -60,6 +60,18 @@ export function Footer() {
             >
               !Nik
             </Link>
+            <span
+              className="text-border/60 mx-2 select-none"
+              aria-hidden="true"
+            >
+              &middot;
+            </span>
+            <Link
+              href="/privacy"
+              className="text-muted-foreground hover:text-foreground text-xs"
+            >
+              privacy
+            </Link>
           </p>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">

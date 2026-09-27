@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 
 export type SectionSubheaderProps = {
+  id?: string;
   children?: React.ReactNode;
   title?: string;
   className?: string;
@@ -9,6 +10,7 @@ export type SectionSubheaderProps = {
 };
 
 export function SectionSubheader({
+  id,
   children,
   title,
   className,
@@ -17,6 +19,7 @@ export function SectionSubheader({
 }: SectionSubheaderProps) {
   return (
     <Component
+      id={id}
       className={cn(
         'text-muted-foreground font-mono text-xs font-semibold tracking-wider uppercase',
         className

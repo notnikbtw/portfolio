@@ -77,14 +77,20 @@ export function AboutConnect() {
           <Card className="flex flex-col gap-4 p-4 sm:p-5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
-                <Image
-                  src={SITE_BADGE.src}
-                  alt={SITE_BADGE.alt}
-                  width={88}
-                  height={31}
-                  unoptimized
-                  className="image-rendering-pixelated border-border/80 shrink-0 border"
-                />
+                <Link
+                  href={SITE_BADGE.url}
+                  className="shrink-0 transition-opacity hover:opacity-85 focus:outline-none"
+                  aria-label={SITE_BADGE.alt}
+                >
+                  <Image
+                    src={SITE_BADGE.src}
+                    alt={SITE_BADGE.alt}
+                    width={88}
+                    height={31}
+                    unoptimized
+                    className="image-rendering-pixelated border-border/80 shrink-0 border"
+                  />
+                </Link>
                 <div className="flex flex-col">
                   <span className="text-foreground font-mono text-xs font-semibold">
                     {SITE_BADGE.title}
