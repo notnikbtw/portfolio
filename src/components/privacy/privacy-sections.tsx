@@ -16,6 +16,7 @@ export function PrivacySections() {
         >
           <SectionSubheader
             id={section.id}
+            as="h2"
             prefix="// "
             title={section.title}
           />

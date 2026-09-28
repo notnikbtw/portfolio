@@ -5,7 +5,7 @@ import { AboutWorkstation } from '@/components/about/about-workstation';
 import { AboutConnect } from '@/components/about/about-connect';
 
 export const metadata: Metadata = {
-  title: 'About | !Nik',
+  title: 'About',
   description: 'A page about me, my engineering background, and my setup.',
 };
 

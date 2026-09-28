@@ -5,7 +5,7 @@ export type SectionSubheaderProps = {
   children?: React.ReactNode;
   title?: string;
   className?: string;
-  as?: 'h3' | 'h4' | 'span' | 'div';
+  as?: 'h2' | 'h3' | 'h4' | 'span' | 'div';
   prefix?: string;
 };
 
