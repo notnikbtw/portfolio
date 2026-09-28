@@ -68,9 +68,10 @@ export function Footer() {
             </span>
             <Link
               href="/privacy"
+              aria-label="Privacy policy and terms of service"
               className="text-muted-foreground hover:text-foreground text-xs"
             >
-              privacy
+              privacy &amp; terms
             </Link>
           </p>
 

@@ -3,7 +3,7 @@ import { ProjectsHeader } from '@/components/projects/projects-header';
 import { ProjectsList } from '@/components/projects/projects-list';
 
 export const metadata: Metadata = {
-  title: 'Projects | !Nik',
+  title: 'Projects',
   description: 'All projects, experiments, and open-source tooling.',
 };
 
